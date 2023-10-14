@@ -20,6 +20,8 @@ final class HomeViewController: BaseViewController {
     
     private var assetPhotoModels: [AssetPhotoModel] = []
     
+    private var arrayIndex: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,11 +38,6 @@ final class HomeViewController: BaseViewController {
                   let albums = albums?.firstObject else { return }
             self.assetsLocalData.fetchPhotosInAlbum(album: albums, page: 1) { [weak self] assets in
                 guard let self = self else { return }
-//                assets.enumerateObjects { asset, <#Int#>, <#UnsafeMutablePointer<ObjCBool>#> in
-//                    <#code#>
-//                }
-//                assets.
-//                self.assetPhotoModels
                 assets.enumerateObjects { asset, _, _ in
                     self.assetPhotoModels.append(.init(asset: asset))
                     DispatchQueue.main.async {
@@ -68,9 +65,33 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionViewCell.identifier, for: indexPath) as? AlbumCollectionViewCell else { return UICollectionViewCell() }
-        print(assetPhotoModels[safe: indexPath.row]?.asset.toImage())
         cell.imageView.image = assetPhotoModels[safe: indexPath.row]?.asset.toImage()
+        let index = arrayIndex.firstIndex(of: indexPath.row)
+        DispatchQueue.main.async {
+            cell.selectionView.setRounded()
+        }
+        if let index = index {
+            cell.subSelectionView.backgroundColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1.0)
+            cell.numLabel.text = "\(index + 1)"
+        } else {
+            cell.subSelectionView.backgroundColor = .clear
+            cell.numLabel.text = " "
+        }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let index = arrayIndex.firstIndex(of: indexPath.row) {
+            let pre = arrayIndex[index]
+            arrayIndex.remove(at: index)
+            collectionView.reloadItems(at: [.init(row: pre, section: 0)])
+            for idx in index ..< arrayIndex.count {
+                collectionView.reloadItems(at: [.init(row: arrayIndex[idx], section: 0)])
+            }
+        } else {
+            arrayIndex.append(indexPath.row)
+            collectionView.reloadItems(at: [indexPath])
+        }
     }
 }
 
