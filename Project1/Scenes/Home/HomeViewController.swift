@@ -100,7 +100,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailsViewController()
-        vc.assetPhotoModels = assetPhotoModels 
+        vc.assetPhotoModels = assetPhotoModels
         vc.index = indexPath
         present(vc, animated: true)
     }

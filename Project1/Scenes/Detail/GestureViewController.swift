@@ -28,7 +28,8 @@ class GestureViewController: UIViewController {
         //        setupImageView()
         
         if let image = image {
-            let imageView = ImageZoomView(frame: view.frame, image: image)
+            let imageView = ImageZoomView(frame: UIScreen.main.bounds, image: image)
+            imageView.contentMode = .scaleAspectFit
             imageView.layer.borderColor = UIColor.black.cgColor
             imageView.layer.borderWidth = 5
             view.addSubview(imageView)
@@ -51,7 +52,8 @@ extension GestureViewController {
     class func show(image: UIImage) {
         dismiss()
         let viewController = GestureViewController(image: image)
-        viewController.modalPresentationStyle = .overFullScreen
+        viewController.view.frame = UIScreen.main.bounds
+        viewController.modalPresentationStyle = .fullScreen
         DispatchQueue.main.async {
             window.makeKeyAndVisible()
             window.rootViewController?.present(viewController, animated: true, completion: nil)

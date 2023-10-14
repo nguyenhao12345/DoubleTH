@@ -18,7 +18,7 @@ final class AlbumCollectionViewCell: BaseCollectionViewCell {
     
     override func awakeFromNib() {
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinch(sender:)))
-        imageView.addGestureRecognizer(pinch)
+        self.addGestureRecognizer(pinch)
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
         gestureRecognizer.numberOfTapsRequired = 2
@@ -33,22 +33,14 @@ final class AlbumCollectionViewCell: BaseCollectionViewCell {
         imageView.image = image
     }
     
-    override func setupView() {
-        //        DispatchQueue.main.async {
-        ////            self.selectionView.layer.cornerRadius = self.selectionView.bounds.size.width/2
-        ////            self.selectionView.layer.masksToBounds = true
-        //            self.selectionView.setRounded()
-        //        }
-        
-    }
-    
     @objc private func pinch(sender: UIPinchGestureRecognizer) {
         switch sender.state {
         case .began:
             let currentScale = self.imageView.frame.size.width / self.imageView.bounds.size.width
             let newScale = currentScale * sender.scale
             if newScale > 1 {
-                GestureViewController.show(image: UIImage(named: "Image")!)
+                guard let image = imageView.image else { return }
+                GestureViewController.show(image: image)
             }
         default:
             break

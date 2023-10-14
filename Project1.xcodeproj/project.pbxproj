@@ -157,7 +157,6 @@
 		04D954082AD6578500A0C190 /* Project1 */ = {
 			isa = PBXGroup;
 			children = (
-				04D9541F2AD658C200A0C190 /* Common */,
 				04D9541D2AD6589C00A0C190 /* Scenes */,
 				04D954092AD6578500A0C190 /* AppDelegate.swift */,
 				04D954122AD6578700A0C190 /* Assets.xcassets */,
@@ -251,6 +250,7 @@
 		F4BA3D582ADA6CDF00B1BD86 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				04D9541F2AD658C200A0C190 /* Common */,
 				F4BA3D592ADA6CF100B1BD86 /* DetailsViewController.swift */,
 				F4BA3D5A2ADA6CF100B1BD86 /* DetailsViewController.xib */,
 				F4BA3D5B2ADA6CF100B1BD86 /* GestureViewController.swift */,
