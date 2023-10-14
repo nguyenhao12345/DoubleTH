@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B734462ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734452ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift */; };
+		04B734482ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734472ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift */; };
+		04B7344A2ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734492ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift */; };
+		04B7344D2ADA427100E3AD36 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7344C2ADA427100E3AD36 /* PhotoLibrary.swift */; };
+		04B7344F2ADA498800E3AD36 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7344E2ADA498800E3AD36 /* UIImageExtension.swift */; };
+		04B734512ADA49FB00E3AD36 /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734502ADA49FB00E3AD36 /* PHAssetExtension.swift */; };
+		04B734542ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734532ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift */; };
 		04BA7D8B2AD7E07300AE4673 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BA7D8A2AD7E07300AE4673 /* HomeViewController.xib */; };
 		04BA7D8E2AD7E11B00AE4673 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D8D2AD7E11B00AE4673 /* BaseViewController.swift */; };
 		04BA7D902AD7E24700AE4673 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D8F2AD7E24700AE4673 /* Reusable.swift */; };
@@ -25,6 +32,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B734452ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewVerticalFlowLayout.swift; sourceTree = "<group>"; };
+		04B734472ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewVerticalFlowLayoutAttributedManager.swift; sourceTree = "<group>"; };
+		04B734492ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewLayoutAttributes.swift; sourceTree = "<group>"; };
+		04B7344C2ADA427100E3AD36 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
+		04B7344E2ADA498800E3AD36 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		04B734502ADA49FB00E3AD36 /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
+		04B734532ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeIntegerPropertyWapper.swift; sourceTree = "<group>"; };
 		04BA7D8A2AD7E07300AE4673 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		04BA7D8D2AD7E11B00AE4673 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04BA7D8F2AD7E24700AE4673 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -55,6 +69,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B734442ADA3C5E00E3AD36 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				04B734452ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift */,
+				04B734472ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		04B7344B2ADA426000E3AD36 /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				04B7344C2ADA427100E3AD36 /* PhotoLibrary.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
+		04B734522ADA4D1900E3AD36 /* PropertyWappers */ = {
+			isa = PBXGroup;
+			children = (
+				04B734532ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift */,
+			);
+			path = PropertyWappers;
+			sourceTree = "<group>";
+		};
 		04BA7D8C2AD7E10C00AE4673 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +170,7 @@
 		04D9541F2AD658C200A0C190 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				04B734522ADA4D1900E3AD36 /* PropertyWappers */,
 				04E1F2182AD7B29100B42A8E /* BaseClass */,
 				04D954212AD658DA00A0C190 /* BaseViews */,
 				04D954202AD658CF00A0C190 /* Extensions */,
@@ -144,6 +184,9 @@
 			children = (
 				04E1F21C2AD7D09000B42A8E /* DataExtension.swift */,
 				04BA7D9B2AD7EA5D00AE4673 /* CollectionExtension.swift */,
+				04B734492ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift */,
+				04B7344E2ADA498800E3AD36 /* UIImageExtension.swift */,
+				04B734502ADA49FB00E3AD36 /* PHAssetExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -151,6 +194,7 @@
 		04D954212AD658DA00A0C190 /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				04B734442ADA3C5E00E3AD36 /* CollectionViewFlowLayout */,
 				04BA7D962AD7E57500AE4673 /* BaseCollectionViewCell */,
 				04BA7D8C2AD7E10C00AE4673 /* BaseViewController */,
 				04E1F21E2AD7D8FA00B42A8E /* BaseCollectionView */,
@@ -161,6 +205,7 @@
 		04E1F2182AD7B29100B42A8E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				04B7344B2ADA426000E3AD36 /* PhotoLibrary */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -255,16 +300,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BA7D982AD7E58100AE4673 /* BaseCollectionViewCell.swift in Sources */,
+				04B7344A2ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift in Sources */,
 				04BA7D952AD7E56D00AE4673 /* AlbumCollectionViewCell.swift in Sources */,
 				04BA7DA22AD7F45A00AE4673 /* typealias.swift in Sources */,
 				04BA7D932AD7E45E00AE4673 /* AlbumModel.swift in Sources */,
 				04BA7D902AD7E24700AE4673 /* Reusable.swift in Sources */,
 				04BA7D9C2AD7EA5D00AE4673 /* CollectionExtension.swift in Sources */,
 				04D9540E2AD6578500A0C190 /* HomeViewController.swift in Sources */,
+				04B734462ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift in Sources */,
+				04B734482ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift in Sources */,
 				04D9540A2AD6578500A0C190 /* AppDelegate.swift in Sources */,
 				04BA7D8E2AD7E11B00AE4673 /* BaseViewController.swift in Sources */,
 				04E1F2202AD7D90800B42A8E /* BaseCollectionView.swift in Sources */,
+				04B734512ADA49FB00E3AD36 /* PHAssetExtension.swift in Sources */,
+				04B7344D2ADA427100E3AD36 /* PhotoLibrary.swift in Sources */,
 				04E1F21D2AD7D09100B42A8E /* DataExtension.swift in Sources */,
+				04B734542ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift in Sources */,
+				04B7344F2ADA498800E3AD36 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
