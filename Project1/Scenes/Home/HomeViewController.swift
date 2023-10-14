@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 final class HomeViewController: BaseViewController {
     @IBOutlet private(set) var albumCollectionView: BaseCollectionView!
@@ -31,23 +32,15 @@ final class HomeViewController: BaseViewController {
     }
     
     private func fetchPhotosInAlbum() {
-        assetsLocalData.getAlbum { [weak self] albums in
-            guard let self = self,
-                  let albums = albums?.firstObject else { return }
-            self.assetsLocalData.fetchPhotosInAlbum(album: albums, page: 1) { [weak self] assets in
-                guard let self = self else { return }
-//                assets.enumerateObjects { asset, <#Int#>, <#UnsafeMutablePointer<ObjCBool>#> in
-//                    <#code#>
-//                }
-//                assets.
-//                self.assetPhotoModels
-                assets.enumerateObjects { asset, _, _ in
-                    self.assetPhotoModels.append(.init(asset: asset))
-                    DispatchQueue.main.async {
-                        self.albumCollectionView.reloadData()
-                    }
-                    
-                }
+        assetsLocalData.getImages(from: "dir_003") { [weak self] assets in
+            guard let self = self else { return }
+            assets.enumerateObjects { asset, _, _ in
+                self.assetPhotoModels.append(.init(asset: asset))
+            }
+            DispatchQueue.main.async { [weak self] in
+                guard let weakSelf = self else { return }
+                weakSelf.albumCollectionView.reloadData()
+                weakSelf.alumnCollectionViewLayout.reload()
             }
         }
     }
@@ -57,6 +50,8 @@ private extension HomeViewController {
     func setupAlbumnCollectionView() {
         albumCollectionView.dataSource = self
         albumCollectionView.delegate = self
+        albumCollectionView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        albumCollectionView.collectionViewLayout = alumnCollectionViewLayout
         albumCollectionView.register(AlbumCollectionViewCell.nib, forCellWithReuseIdentifier: AlbumCollectionViewCell.identifier)
     }
 }
@@ -68,7 +63,6 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionViewCell.identifier, for: indexPath) as? AlbumCollectionViewCell else { return UICollectionViewCell() }
-        print(assetPhotoModels[safe: indexPath.row]?.asset.toImage())
         cell.imageView.image = assetPhotoModels[safe: indexPath.row]?.asset.toImage()
         return cell
     }
@@ -92,14 +86,11 @@ extension HomeViewController: CollectionViewFlowLayoutDelegate {
     }
     
     func numberColumnInCollection() -> Int {
-        2
+        3
     }
     
     func heightForCell(at indexPath: IndexPath, widthCellOfContent: CGFloat) -> CGFloat {
-//        guard let imageAtIndexPath = images[safe: indexPath.row] else { return 0.0 }
-//        let ratioHeightPerWidth = imageAtIndexPath.size.height / imageAtIndexPath.size.width
-//        return widthCellOfContent * ratioHeightPerWidth
-        return UIScreen.main.bounds.width / 2
+        return 100
     }
 }
 

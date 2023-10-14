@@ -28,7 +28,7 @@ public final class CollectionViewVerticalFlowLayout: UICollectionViewFlowLayout,
 
     public init(delegate: CollectionViewFlowLayoutDelegate?, collectionView: UICollectionView?) {
         super.init()
-//        pinterestFlowLayoutAttributedManager = .init(delegate: delegate, collectionView: collectionView)
+        collectionViewFlowLayoutAttributedManager =  CollectionViewVerticalFlowLayoutAttributedManager(delegate: delegate, collectionView: collectionView)
     }
     
     required init?(coder: NSCoder) {
@@ -41,6 +41,12 @@ public final class CollectionViewVerticalFlowLayout: UICollectionViewFlowLayout,
             collectionViewFlowLayoutAttributedManager?.prepare()
             state = .calculated
         }
+    }
+    
+    func reload() {
+        state = .prepare
+        collectionViewFlowLayoutAttributedManager?.reload()
+        prepare()
     }
     
     public override var collectionViewContentSize: CGSize {

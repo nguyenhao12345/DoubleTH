@@ -21,9 +21,16 @@ public protocol CollectionViewLayoutAttributedManagerProtocol {
     func widthContentSize() -> CGFloat
     func changeSize(with size: CGSize, at indexPath: IndexPath) -> Bool
     func prepare()
+    func reload()
 }
 
 open class CollectionViewVerticalFlowLayoutAttributedManager: NSObject, CollectionViewLayoutAttributedManagerProtocol {
+    enum Direction {
+        case top
+        case bottom
+        case none
+    }
+    
     private weak var collectionView: UICollectionView?
     private var attributedsCached: [UICollectionViewLayoutAttributes] = []
     @RangeIntegerPropertyWapper(max: 6) var limitNumberColumnInCollection
@@ -39,19 +46,14 @@ open class CollectionViewVerticalFlowLayoutAttributedManager: NSObject, Collecti
     private var indexOfMaxY = 0
     private var indexOfMinY = 0
     private var indexLastCaculated = 0
+    private var direction: Direction = .none
+    private var prepareOnSuccesfully: Bool = false
     private var maxHeightCurrent: CGFloat {
         attributedsCached.last?.frame.maxY ?? 0.0
     }
-    
-    enum Direction {
-        case top
-        case bottom
-        case none
+    public func reload() {
+        initValues()
     }
-    
-    var direction: Direction = .none
-    
-    private var prepareOnSuccesfully: Bool = false
     
     public init?(delegate: CollectionViewFlowLayoutDelegate?, collectionView: UICollectionView?) {
         guard let collectionView = collectionView,
@@ -62,7 +64,7 @@ open class CollectionViewVerticalFlowLayoutAttributedManager: NSObject, Collecti
     
     public func prepare() {
         guard let collectionView = collectionView else { return }
-        initValues()
+        limitNumberColumnInCollection = delegate?.numberColumnInCollection()
         let numberOfSections = collectionView.numberOfSections
         for section in 0..<numberOfSections {
             prepareSection(at: section)
@@ -111,7 +113,7 @@ open class CollectionViewVerticalFlowLayoutAttributedManager: NSObject, Collecti
 private extension CollectionViewVerticalFlowLayoutAttributedManager {
     private func initValues() {
         limitNumberColumnInCollection = delegate?.numberColumnInCollection()
-        listIndexsInRectTermperator = []
+        attributedsCached = []
         scaningRect = CGRect(origin: .init(x: -(collectionView?.frame.width ?? 0),
                                                             y: -(collectionView?.frame.height ?? 0)),
                                               size: .init(width: 3 * (collectionView?.frame.width ?? 0),
@@ -121,12 +123,12 @@ private extension CollectionViewVerticalFlowLayoutAttributedManager {
         indexOfMaxY = 0
         indexOfMinY = 0
         indexLastCaculated = 0
+        prepareOnSuccesfully = false
     }
     
     private func prepareSection(at sectionIndex: Int) {
         guard let collectionView = collectionView else { return }
         let numberOfItems = collectionView.numberOfItems(inSection: sectionIndex)
-        var indexColumnCurrent: Int = 0
         
         if !prepareOnSuccesfully {
             for index in 0..<numberOfItems {
@@ -139,14 +141,6 @@ private extension CollectionViewVerticalFlowLayoutAttributedManager {
 
                 attributedsCached.append(cellAtIndex)
                 listIndexsInRectTermperator.append(indexPath)
-
-                if cellAtIndex.frame.maxY > maxHeightCurrent {
-                    if indexColumnCurrent >= (limitNumberColumnInCollection ?? 0) - 1 {
-                        indexColumnCurrent = 0
-                    } else {
-                        indexColumnCurrent += 1
-                    }
-                }
 
                 if maxY >= scaningRect.maxY {
                     break
@@ -209,16 +203,6 @@ private extension CollectionViewVerticalFlowLayoutAttributedManager {
                         attributedsCached.append(cellAtIndex)
                     }
 
-                        
-
-                    if cellAtIndex.frame.maxY > maxHeightCurrent {
-                        if indexColumnCurrent >= (limitNumberColumnInCollection ?? 0) - 1 {
-                            indexColumnCurrent = 0
-                        } else {
-                            indexColumnCurrent += 1
-                        }
-                    }
-
                     if !listIndexsInRectTermperator.contains(indexPath) {
                         listIndexsInRectTermperator.append(indexPath)
                     }
@@ -247,7 +231,7 @@ private extension CollectionViewVerticalFlowLayoutAttributedManager {
                 print("nothing")
             }
         }
-
+        
     }
     
     private func prepareCell(at sectionIndex: Int,
@@ -255,15 +239,16 @@ private extension CollectionViewVerticalFlowLayoutAttributedManager {
         let indexColumnCurrent = rowIndex % (limitNumberColumnInCollection ?? 0)
         let indexPath = IndexPath(row: rowIndex, section: sectionIndex)
         let sizeOfCell = sizeForCell(at: indexPath)
-        let marginHorical: CGFloat = indexColumnCurrent == 0 ? 0 : (CGFloat(indexColumnCurrent) * (delegate?.marginHorizontal() ?? 0))
+        let marginHorical: CGFloat = indexColumnCurrent == 0 ? 0 : CGFloat(rowIndex % (limitNumberColumnInCollection ?? 0))
+        let marginVertical: CGFloat = CGFloat((rowIndex) / (limitNumberColumnInCollection ?? 0)) == 0 ? 0 : CGFloat((rowIndex) / (limitNumberColumnInCollection ?? 0)) * (delegate?.marginVertical() ?? 0)
         let frameCaculator: CGRect
         
         if let framePriviousCache = attributedsCached[safe: rowIndex] {
             return framePriviousCache
         }
         else {
-            let locationY: CGFloat = CGFloat((rowIndex) / (limitNumberColumnInCollection ?? 0)) * (sizeOfCell?.height ?? 0)
-            let locationX: CGFloat = CGFloat(rowIndex % (limitNumberColumnInCollection ?? 0)) * (sizeOfCell?.width ?? 0)
+            let locationY: CGFloat = CGFloat((rowIndex) / (limitNumberColumnInCollection ?? 0)) * (sizeOfCell?.height ?? 0) + marginVertical
+            let locationX: CGFloat = CGFloat(rowIndex % (limitNumberColumnInCollection ?? 0)) * (sizeOfCell?.width ?? 0) + marginHorical
             frameCaculator = .init(x: locationX,
                                    y: locationY,
                                    width: sizeOfCell?.width ?? 0,

@@ -36,10 +36,10 @@
             <constraints>
                 <constraint firstItem="YpM-sS-vsq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8GQ-Fm-DDU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YpM-sS-vsq" secondAttribute="trailing" id="EKF-8l-eX1"/>
-                <constraint firstItem="YpM-sS-vsq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Ikk-cs-MlU"/>
+                <constraint firstItem="YpM-sS-vsq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="aXh-5W-7l5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="YpM-sS-vsq" secondAttribute="bottom" id="rX6-7j-lOE"/>
             </constraints>
-            <point key="canvasLocation" x="39" y="20"/>
+            <point key="canvasLocation" x="38.931297709923662" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>

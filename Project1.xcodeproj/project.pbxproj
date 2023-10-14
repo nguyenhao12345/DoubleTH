@@ -14,10 +14,12 @@
 		04B7344F2ADA498800E3AD36 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7344E2ADA498800E3AD36 /* UIImageExtension.swift */; };
 		04B734512ADA49FB00E3AD36 /* PHAssetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734502ADA49FB00E3AD36 /* PHAssetExtension.swift */; };
 		04B734542ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734532ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift */; };
+		04B734572ADA5C2000E3AD36 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B734562ADA5C2000E3AD36 /* AlbumViewController.swift */; };
+		04B734592ADA5C4700E3AD36 /* AlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B734582ADA5C4700E3AD36 /* AlbumViewController.xib */; };
+		04B7345C2ADA654B00E3AD36 /* AssetPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7345B2ADA654B00E3AD36 /* AssetPhotoModel.swift */; };
 		04BA7D8B2AD7E07300AE4673 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BA7D8A2AD7E07300AE4673 /* HomeViewController.xib */; };
 		04BA7D8E2AD7E11B00AE4673 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D8D2AD7E11B00AE4673 /* BaseViewController.swift */; };
 		04BA7D902AD7E24700AE4673 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D8F2AD7E24700AE4673 /* Reusable.swift */; };
-		04BA7D932AD7E45E00AE4673 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D922AD7E45E00AE4673 /* AlbumModel.swift */; };
 		04BA7D952AD7E56D00AE4673 /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D942AD7E56D00AE4673 /* AlbumCollectionViewCell.swift */; };
 		04BA7D982AD7E58100AE4673 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D972AD7E58100AE4673 /* BaseCollectionViewCell.swift */; };
 		04BA7D9A2AD7E61500AE4673 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BA7D992AD7E61500AE4673 /* AlbumCollectionViewCell.xib */; };
@@ -39,10 +41,12 @@
 		04B7344E2ADA498800E3AD36 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		04B734502ADA49FB00E3AD36 /* PHAssetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAssetExtension.swift; sourceTree = "<group>"; };
 		04B734532ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeIntegerPropertyWapper.swift; sourceTree = "<group>"; };
+		04B734562ADA5C2000E3AD36 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		04B734582ADA5C4700E3AD36 /* AlbumViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumViewController.xib; sourceTree = "<group>"; };
+		04B7345B2ADA654B00E3AD36 /* AssetPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPhotoModel.swift; sourceTree = "<group>"; };
 		04BA7D8A2AD7E07300AE4673 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		04BA7D8D2AD7E11B00AE4673 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04BA7D8F2AD7E24700AE4673 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
-		04BA7D922AD7E45E00AE4673 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		04BA7D942AD7E56D00AE4673 /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BA7D972AD7E58100AE4673 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		04BA7D992AD7E61500AE4673 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -94,6 +98,23 @@
 			path = PropertyWappers;
 			sourceTree = "<group>";
 		};
+		04B734552ADA5BC700E3AD36 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				04B734562ADA5C2000E3AD36 /* AlbumViewController.swift */,
+				04B734582ADA5C4700E3AD36 /* AlbumViewController.xib */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		04B7345A2ADA653E00E3AD36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04B7345B2ADA654B00E3AD36 /* AssetPhotoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		04BA7D8C2AD7E10C00AE4673 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +122,6 @@
 				04BA7D8F2AD7E24700AE4673 /* Reusable.swift */,
 			);
 			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		04BA7D912AD7E42B00AE4673 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				04BA7D922AD7E45E00AE4673 /* AlbumModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		04BA7D962AD7E57500AE4673 /* BaseCollectionViewCell */ = {
@@ -151,6 +164,7 @@
 		04D9541D2AD6589C00A0C190 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				04B734552ADA5BC700E3AD36 /* Album */,
 				04D9541E2AD658B300A0C190 /* Home */,
 			);
 			path = Scenes;
@@ -159,7 +173,7 @@
 		04D9541E2AD658B300A0C190 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				04BA7D912AD7E42B00AE4673 /* Models */,
+				04B7345A2ADA653E00E3AD36 /* Models */,
 				04E1F2212AD7D92F00B42A8E /* Views */,
 				04D9540D2AD6578500A0C190 /* HomeViewController.swift */,
 				04BA7D8A2AD7E07300AE4673 /* HomeViewController.xib */,
@@ -289,6 +303,7 @@
 				04BA7D9A2AD7E61500AE4673 /* AlbumCollectionViewCell.xib in Resources */,
 				04D954132AD6578700A0C190 /* Assets.xcassets in Resources */,
 				04BA7D8B2AD7E07300AE4673 /* HomeViewController.xib in Resources */,
+				04B734592ADA5C4700E3AD36 /* AlbumViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,19 +318,20 @@
 				04B7344A2ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift in Sources */,
 				04BA7D952AD7E56D00AE4673 /* AlbumCollectionViewCell.swift in Sources */,
 				04BA7DA22AD7F45A00AE4673 /* typealias.swift in Sources */,
-				04BA7D932AD7E45E00AE4673 /* AlbumModel.swift in Sources */,
 				04BA7D902AD7E24700AE4673 /* Reusable.swift in Sources */,
 				04BA7D9C2AD7EA5D00AE4673 /* CollectionExtension.swift in Sources */,
 				04D9540E2AD6578500A0C190 /* HomeViewController.swift in Sources */,
 				04B734462ADA3C9200E3AD36 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				04B734482ADA3D2200E3AD36 /* CollectionViewVerticalFlowLayoutAttributedManager.swift in Sources */,
 				04D9540A2AD6578500A0C190 /* AppDelegate.swift in Sources */,
+				04B7345C2ADA654B00E3AD36 /* AssetPhotoModel.swift in Sources */,
 				04BA7D8E2AD7E11B00AE4673 /* BaseViewController.swift in Sources */,
 				04E1F2202AD7D90800B42A8E /* BaseCollectionView.swift in Sources */,
 				04B734512ADA49FB00E3AD36 /* PHAssetExtension.swift in Sources */,
 				04B7344D2ADA427100E3AD36 /* PhotoLibrary.swift in Sources */,
 				04E1F21D2AD7D09100B42A8E /* DataExtension.swift in Sources */,
 				04B734542ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift in Sources */,
+				04B734572ADA5C2000E3AD36 /* AlbumViewController.swift in Sources */,
 				04B7344F2ADA498800E3AD36 /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
