@@ -16,17 +16,11 @@
 		04BA7D9A2AD7E61500AE4673 /* AlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BA7D992AD7E61500AE4673 /* AlbumCollectionViewCell.xib */; };
 		04BA7D9C2AD7EA5D00AE4673 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D9B2AD7EA5D00AE4673 /* CollectionExtension.swift */; };
 		04BA7D9E2AD7EA8000AE4673 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D9D2AD7EA8000AE4673 /* Environment.swift */; };
-		04BA7DA02AD7ECC500AE4673 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7D9F2AD7ECC500AE4673 /* ImageDownloader.swift */; };
 		04BA7DA22AD7F45A00AE4673 /* typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BA7DA12AD7F45A00AE4673 /* typealias.swift */; };
 		04D9540A2AD6578500A0C190 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D954092AD6578500A0C190 /* AppDelegate.swift */; };
 		04D9540E2AD6578500A0C190 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9540D2AD6578500A0C190 /* HomeViewController.swift */; };
 		04D954132AD6578700A0C190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04D954122AD6578700A0C190 /* Assets.xcassets */; };
 		04D954162AD6578700A0C190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D954142AD6578700A0C190 /* LaunchScreen.storyboard */; };
-		04D954252AD6778C00A0C190 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D954242AD6778C00A0C190 /* APIHelper.swift */; };
-		04D954272AD6989A00A0C190 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D954262AD6989A00A0C190 /* HttpRequest.swift */; };
-		04D9542B2AD6A23D00A0C190 /* BaseURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9542A2AD6A23D00A0C190 /* BaseURLSession.swift */; };
-		04D9542D2AD6A35400A0C190 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9542C2AD6A35400A0C190 /* APIRequest.swift */; };
-		04E1F21B2AD7B2A400B42A8E /* SendingAPIRequestInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F21A2AD7B2A400B42A8E /* SendingAPIRequestInteractions.swift */; };
 		04E1F21D2AD7D09100B42A8E /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F21C2AD7D09000B42A8E /* DataExtension.swift */; };
 		04E1F2202AD7D90800B42A8E /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F21F2AD7D90800B42A8E /* BaseCollectionView.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +35,6 @@
 		04BA7D992AD7E61500AE4673 /* AlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 		04BA7D9B2AD7EA5D00AE4673 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		04BA7D9D2AD7EA8000AE4673 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		04BA7D9F2AD7ECC500AE4673 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		04BA7DA12AD7F45A00AE4673 /* typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = typealias.swift; sourceTree = "<group>"; };
 		04D954062AD6578500A0C190 /* Project1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D954092AD6578500A0C190 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,11 +42,6 @@
 		04D954122AD6578700A0C190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04D954152AD6578700A0C190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04D954172AD6578700A0C190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04D954242AD6778C00A0C190 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
-		04D954262AD6989A00A0C190 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
-		04D9542A2AD6A23D00A0C190 /* BaseURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLSession.swift; sourceTree = "<group>"; };
-		04D9542C2AD6A35400A0C190 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		04E1F21A2AD7B2A400B42A8E /* SendingAPIRequestInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingAPIRequestInteractions.swift; sourceTree = "<group>"; };
 		04E1F21C2AD7D09000B42A8E /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		04E1F21F2AD7D90800B42A8E /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				04E1F2182AD7B29100B42A8E /* BaseClass */,
-				04D954232AD6777700A0C190 /* Network */,
 				04D954222AD658EE00A0C190 /* Settings */,
 				04D954212AD658DA00A0C190 /* BaseViews */,
 				04D954202AD658CF00A0C190 /* Extensions */,
@@ -182,32 +169,11 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		04D954232AD6777700A0C190 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				04D954242AD6778C00A0C190 /* APIHelper.swift */,
-				04D954262AD6989A00A0C190 /* HttpRequest.swift */,
-				04D9542A2AD6A23D00A0C190 /* BaseURLSession.swift */,
-				04D9542C2AD6A35400A0C190 /* APIRequest.swift */,
-				04BA7D9F2AD7ECC500AE4673 /* ImageDownloader.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		04E1F2182AD7B29100B42A8E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-				04E1F2192AD7B29D00B42A8E /* SendingAPIRequestInteractions */,
 			);
 			path = BaseClass;
-			sourceTree = "<group>";
-		};
-		04E1F2192AD7B29D00B42A8E /* SendingAPIRequestInteractions */ = {
-			isa = PBXGroup;
-			children = (
-				04E1F21A2AD7B2A400B42A8E /* SendingAPIRequestInteractions.swift */,
-			);
-			path = SendingAPIRequestInteractions;
 			sourceTree = "<group>";
 		};
 		04E1F21E2AD7D8FA00B42A8E /* BaseCollectionView */ = {
@@ -299,7 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D954252AD6778C00A0C190 /* APIHelper.swift in Sources */,
 				04BA7D9E2AD7EA8000AE4673 /* Environment.swift in Sources */,
 				04BA7D982AD7E58100AE4673 /* BaseCollectionViewCell.swift in Sources */,
 				04BA7D952AD7E56D00AE4673 /* AlbumCollectionViewCell.swift in Sources */,
@@ -307,16 +272,11 @@
 				04BA7D932AD7E45E00AE4673 /* AlbumModel.swift in Sources */,
 				04BA7D902AD7E24700AE4673 /* Reusable.swift in Sources */,
 				04BA7D9C2AD7EA5D00AE4673 /* CollectionExtension.swift in Sources */,
-				04D954272AD6989A00A0C190 /* HttpRequest.swift in Sources */,
 				04D9540E2AD6578500A0C190 /* HomeViewController.swift in Sources */,
 				04D9540A2AD6578500A0C190 /* AppDelegate.swift in Sources */,
-				04D9542D2AD6A35400A0C190 /* APIRequest.swift in Sources */,
 				04BA7D8E2AD7E11B00AE4673 /* BaseViewController.swift in Sources */,
 				04E1F2202AD7D90800B42A8E /* BaseCollectionView.swift in Sources */,
 				04E1F21D2AD7D09100B42A8E /* DataExtension.swift in Sources */,
-				04D9542B2AD6A23D00A0C190 /* BaseURLSession.swift in Sources */,
-				04BA7DA02AD7ECC500AE4673 /* ImageDownloader.swift in Sources */,
-				04E1F21B2AD7B2A400B42A8E /* SendingAPIRequestInteractions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
