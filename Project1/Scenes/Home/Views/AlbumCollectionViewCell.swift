@@ -23,6 +23,10 @@ final class AlbumCollectionViewCell: BaseCollectionViewCell {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
         gestureRecognizer.numberOfTapsRequired = 2
         addGestureRecognizer(gestureRecognizer)
+        
+        selectionView.addTapGesture {
+            self.doubleTapBlock?()
+        }
     }
     
     func config(with title: String, image: UIImage) {
@@ -243,4 +247,23 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+}
+
+extension UIView {
+    func addTapGesture(action : @escaping ()->Void ){
+        let tap = MyTapGestureRecognizer(target: self , action: #selector(self.handleTap(_:)))
+        tap.action = action
+        tap.numberOfTapsRequired = 1
+        
+        self.addGestureRecognizer(tap)
+        self.isUserInteractionEnabled = true
+    }
+    
+    @objc func handleTap(_ sender: MyTapGestureRecognizer) {
+        sender.action!()
+    }
+}
+
+class MyTapGestureRecognizer: UITapGestureRecognizer {
+    var action : (()->Void)? = nil
 }
