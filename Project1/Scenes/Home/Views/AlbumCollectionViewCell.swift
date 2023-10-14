@@ -14,17 +14,45 @@ final class AlbumCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var selectionView: UIView!
     @IBOutlet weak var subSelectionView: UIView!
     
+    var doubleTapBlock: (() -> Void)?
+    
+    override func awakeFromNib() {
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinch(sender:)))
+        imageView.addGestureRecognizer(pinch)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+        gestureRecognizer.numberOfTapsRequired = 2
+        addGestureRecognizer(gestureRecognizer)
+    }
+    
     func config(with title: String, image: UIImage) {
         imageView.image = image
     }
     
     override func setupView() {
-//        DispatchQueue.main.async {
-////            self.selectionView.layer.cornerRadius = self.selectionView.bounds.size.width/2
-////            self.selectionView.layer.masksToBounds = true
-//            self.selectionView.setRounded()
-//        }
+        //        DispatchQueue.main.async {
+        ////            self.selectionView.layer.cornerRadius = self.selectionView.bounds.size.width/2
+        ////            self.selectionView.layer.masksToBounds = true
+        //            self.selectionView.setRounded()
+        //        }
         
+    }
+    
+    @objc private func pinch(sender: UIPinchGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            let currentScale = self.imageView.frame.size.width / self.imageView.bounds.size.width
+            let newScale = currentScale * sender.scale
+            if newScale > 1 {
+                GestureViewController.show(image: UIImage(named: "Image")!)
+            }
+        default:
+            break
+        }
+    }
+    
+    @objc func handleDoubleTap() {
+        doubleTapBlock?()
     }
 }
 

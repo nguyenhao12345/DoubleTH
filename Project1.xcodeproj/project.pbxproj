@@ -31,6 +31,9 @@
 		04D954162AD6578700A0C190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D954142AD6578700A0C190 /* LaunchScreen.storyboard */; };
 		04E1F21D2AD7D09100B42A8E /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F21C2AD7D09000B42A8E /* DataExtension.swift */; };
 		04E1F2202AD7D90800B42A8E /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1F21F2AD7D90800B42A8E /* BaseCollectionView.swift */; };
+		F4BA3D5C2ADA6CF100B1BD86 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA3D592ADA6CF100B1BD86 /* DetailsViewController.swift */; };
+		F4BA3D5D2ADA6CF100B1BD86 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4BA3D5A2ADA6CF100B1BD86 /* DetailsViewController.xib */; };
+		F4BA3D5E2ADA6CF100B1BD86 /* GestureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BA3D5B2ADA6CF100B1BD86 /* GestureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		04D954172AD6578700A0C190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E1F21C2AD7D09000B42A8E /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		04E1F21F2AD7D90800B42A8E /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		F4BA3D592ADA6CF100B1BD86 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		F4BA3D5A2ADA6CF100B1BD86 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		F4BA3D5B2ADA6CF100B1BD86 /* GestureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 		04D9541D2AD6589C00A0C190 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F4BA3D582ADA6CDF00B1BD86 /* Detail */,
 				04B734552ADA5BC700E3AD36 /* Album */,
 				04D9541E2AD658B300A0C190 /* Home */,
 			);
@@ -241,6 +248,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F4BA3D582ADA6CDF00B1BD86 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F4BA3D592ADA6CF100B1BD86 /* DetailsViewController.swift */,
+				F4BA3D5A2ADA6CF100B1BD86 /* DetailsViewController.xib */,
+				F4BA3D5B2ADA6CF100B1BD86 /* GestureViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +321,7 @@
 				04D954132AD6578700A0C190 /* Assets.xcassets in Resources */,
 				04BA7D8B2AD7E07300AE4673 /* HomeViewController.xib in Resources */,
 				04B734592ADA5C4700E3AD36 /* AlbumViewController.xib in Resources */,
+				F4BA3D5D2ADA6CF100B1BD86 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4BA3D5E2ADA6CF100B1BD86 /* GestureViewController.swift in Sources */,
 				04BA7D982AD7E58100AE4673 /* BaseCollectionViewCell.swift in Sources */,
 				04B7344A2ADA400C00E3AD36 /* UICollectionViewLayoutAttributes.swift in Sources */,
 				04BA7D952AD7E56D00AE4673 /* AlbumCollectionViewCell.swift in Sources */,
@@ -333,6 +352,7 @@
 				04B734542ADA4D2200E3AD36 /* RangeIntegerPropertyWapper.swift in Sources */,
 				04B734572ADA5C2000E3AD36 /* AlbumViewController.swift in Sources */,
 				04B7344F2ADA498800E3AD36 /* UIImageExtension.swift in Sources */,
+				F4BA3D5C2ADA6CF100B1BD86 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,10 +491,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 523H2KHR8P;
+				DEVELOPMENT_TEAM = A4NRZ8376D;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project1/Info.plist;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) requires Photo access to select photo and add to note";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Project1 requires Photo access to select photo and add to note";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -486,7 +506,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = playground.vn.Project1sd;
+				PRODUCT_BUNDLE_IDENTIFIER = playground.vn.Project1sd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -504,7 +524,7 @@
 				DEVELOPMENT_TEAM = 523H2KHR8P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Project1/Info.plist;
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) requires Photo access to select photo and add to note";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Project1 requires Photo access to select photo and add to note";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
